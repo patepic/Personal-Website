@@ -1,18 +1,17 @@
 {
-  "name": "personal-website",
-  "version": "2.1.0",
-  "private": true,
+  "name": "portfolio",
+  "type": "module",
+  "version": "3.0.0",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
-  },
-  "devDependencies": {
-    "astro": "^2.3.2",
-    "prettier-plugin-astro": "^0.8.0"
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "cypress": "^10.0.3"
+    "@astrojs/tailwind": "^6.0.2",
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.13.7",
+    "tailwindcss": "^4.1.13"
   }
 }
