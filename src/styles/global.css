@@ -84,19 +84,24 @@ section p {
 
 /* Intro Header */
 #home {
-  text-align: center;
-  padding: 6rem 2rem 4rem;
+  padding: 3rem 1rem 2rem;
   scroll-margin-top: 0;
 }
 
 #home h2 {
   font-size: 3rem;
   font-weight: 700;
+  margin-bottom: 0rem;
+}
+
+#home h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
 #home p {
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: #444;
 }
 
