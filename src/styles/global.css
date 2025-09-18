@@ -137,7 +137,7 @@ section p {
 }
 
 .job {
-  padding: 2rem;
+  padding: 0.5rem;
   border-radius: 1rem;
   transition: background-color 0.2s ease
 }
