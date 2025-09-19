@@ -126,78 +126,100 @@ section p {
 #work h2 {
   font-size: 2.5rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   color: #111;
 }
 
-.job-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.timeline {
+  position: relative;
+  padding-left: 1rem;
 }
 
-.job {
-  padding: 1rem;
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 4px;
+  height: calc(100% - 1rem);
+  background-color: #0073b1;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 0.75rem; 
+  left: 0.1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #0073b1;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  transform: translateX(-50%); 
+  box-shadow: 0 0 0 3px #e6f2f9;
+}
+
+.timeline-content {
+  margin-left: 3rem;
+  padding: 0.5rem 1rem;
   border-radius: 1rem;
-  margin: -1rem 0;
-  transition: background-color 0.2s ease
+  transition: background-color 0.2s ease;
 }
 
-.job:hover {
+.timeline-content:hover {
   background-color: #eef6fb;
-  box-shadow: 0 4px 16px rgba(0, 115, 177, 0.15); 
 }
 
-.job h3 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
+.timeline-content h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
   color: #111;
 }
 
-.job h3,
-.job h4 {
-  transition: color 0.2s ease
+.timeline-content h4 {
+  margin: 0.2rem 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #444;
 }
 
-.job:hover h3,
-.job:hover h4 {
-  color: #0073b1;
-}
-
-.job .job-meta {
-  font-size: 1rem;
+.timeline-content .job-meta {
+  font-size: 0.95rem;
   color: #555;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.job p {
+.timeline-content p {
   font-size: 1rem;
   line-height: 1.6;
   color: #555;
-  margin-bottom: 1rem;
 }
 
 .skills {
-    margin-top: 0.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .skill-chip {
-    display: inline-block;
-    padding: 0.3rem 0.8rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #333;
-    background-color: #e0e0e0;
-    border-radius: 9999px;
-    transition: background-color 0.2s;
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+  background-color: #e0e0e0;
+  border-radius: 9999px;
+  transition: background-color 0.2s;
 }
 
 .skill-chip:hover {
-    background-color: #cfcfcf;
+  background-color: #cfcfcf;
 }
 
 /* Skills */
