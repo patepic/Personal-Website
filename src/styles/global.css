@@ -9,8 +9,8 @@
 html {
   scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;
-  background: #fff;
-  color: #111;
+  background: #262626;
+  color: #fff;
   scroll-behavior: smooth;
   scroll-padding-top: 64px;
 }
@@ -21,25 +21,21 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.75);
+  height: 5rem;
+  background: rgba(38, 38, 38, 0.75);
   backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(255, 255,255,0.1);
   z-index: 1000;
 }
 
 nav {
   max-width: 980px;
-  margin: 0 auto;
+  height: 100%;
+  margin: 0 auto 0 50rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  padding: 0.75rem 1.5rem;
-  gap: 2rem;
-}
-
-nav h1 {
-  font-size: 1rem;
-  font-weight: 600;
+  padding: 0 1.5rem;
 }
 
 nav ul {
@@ -51,7 +47,7 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #111;
+  color: #fff;
   transition: opacity 0.2s ease;
 }
 
@@ -79,7 +75,7 @@ section h2 {
 section p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #555;
+  color: #fff;
 }
 
 /* Intro Header */
@@ -101,7 +97,7 @@ section p {
 
 #home p {
   font-size: 1rem;
-  color: #444;
+  color: #fff;
 }
 
 /* About */
@@ -127,7 +123,7 @@ section p {
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 3rem;
-  color: #111;
+  color: #fff;
 }
 
 .timeline {
@@ -142,7 +138,7 @@ section p {
   left: 1rem;
   width: 4px;
   height: calc(100% - 1rem);
-  background-color: #0073b1;
+  background-color: #008080;
 }
 
 .timeline-item {
@@ -156,7 +152,7 @@ section p {
   left: 0.1rem;
   width: 1.5rem;
   height: 1.5rem;
-  background-color: #0073b1;
+  background-color: #008080;
   border-radius: 50%;
   border: 3px solid #fff;
   transform: translateX(-50%); 
@@ -171,33 +167,33 @@ section p {
 }
 
 .timeline-content:hover {
-  background-color: #eef6fb;
+  background-color: #008080;
 }
 
 .timeline-content h3 {
   margin: 0;
   font-size: 1.4rem;
   font-weight: 600;
-  color: #111;
+  color: #fff;
 }
 
 .timeline-content h4 {
   margin: 0.2rem 0 0.5rem 0;
   font-size: 1.1rem;
   font-weight: 500;
-  color: #444;
+  color: #fff;
 }
 
 .timeline-content .job-meta {
   font-size: 0.95rem;
-  color: #555;
+  color: #fff;
   margin-bottom: 0.5rem;
 }
 
 .timeline-content p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #555;
+  color: #fff;
 }
 
 .skills {
@@ -245,12 +241,13 @@ section p {
 .skills-grid p {
   font-size: 0.95rem;
   font-weight: 500;
-  color: #333;
+  color: #fff;
 }
 
 
 /* Projects */
 .projects-grid {
+  color: #262626;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
@@ -262,6 +259,10 @@ section p {
   border-radius: 1rem;
   text-align: left;
   transition: transform 0.2s ease
+}
+
+.projects-grid p {
+  color: #262626;
 }
 
 .projects-grid div:hover {
