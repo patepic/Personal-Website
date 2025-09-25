@@ -9,8 +9,8 @@
 html {
   scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;
-  background: #0b1616;
-  color: #fff;
+  background: #1b3636;
+  color: #fbfbfb;
   scroll-behavior: smooth;
   scroll-padding-top: 64px;
 }
@@ -18,26 +18,36 @@ html {
 /* Header */
 header {
   position: fixed;
-  top: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50%;
+  width: 100%;
   height: 3rem;
-  background: rgba(0, 40, 40, 0.9);
+  background: rgba(30, 60, 60, 0.9);
   backdrop-filter: saturate(180%) blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  border-bottom: 1px solid rgba(251, 251, 251, 0.25);
   z-index: 1000;
 }
 
 nav {
-  max-width: 980px;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; 
   padding: 0 1.5rem;
+}
+
+nav ul.left {
+  background: rgba(40, 70, 70, 0.9);
+  display: flex;
+  gap: 2rem;
+  border-right: 1px solid rgba(251, 251, 251, 0.1);
+  width: 10rem;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-left: -1.5rem;
+  transition: all 0.2s ease;
 }
 
 nav ul {
@@ -51,15 +61,19 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #fff;
+  color: #fbfbfb;
   padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
   border: 1px solid transparent;
   transition: all 0.2s ease;
 }
 
-nav a:hover {
-  background: rgba(0, 128, 128, 0.35);
+nav ul.left:has(a:hover) {
+  background: rgb(50, 80, 80);
+}
+
+nav ul.right a:hover {
+  background: rgb(50, 80, 80);
 }
 
 /* Sections */
@@ -157,7 +171,7 @@ section p {
   height: 1.5rem;
   background-color: #008080;
   border-radius: 50%;
-  border: 3px solid #fff;
+  border: 3px solid #fbfbfb;
   transform: translateX(-50%); 
   box-shadow: 0 0 0 3px #e6f2f9;
 }
@@ -170,7 +184,7 @@ section p {
 }
 
 .timeline-content:hover {
-  background-color: #008080;
+  background-color: #306161;
 }
 
 .timeline-content h3 {
@@ -210,14 +224,14 @@ section p {
   padding: 0.3rem 0.8rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #333;
-  background-color: #e0e0e0;
+  color: #d9ffff;
+  background-color: #006d6d;
   border-radius: 9999px;
   transition: background-color 0.2s;
 }
 
 .skill-chip:hover {
-  background-color: #cfcfcf;
+  background-color: #00a6a6;
 }
 
 /* Skills */
@@ -255,14 +269,14 @@ section p {
 }
 
 .projects-grid {
-  color: #262626;
+  color: #fbfbfb;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
 .projects-grid div {
-  background: #fbfbfb;
+  background: #306161;
   padding: 2rem;
   border-radius: 1rem;
   text-align: left;
@@ -270,12 +284,12 @@ section p {
 }
 
 .projects-grid p {
-  color: #111;
+  color: #fbfbfb;
 }
 
 .projects-grid div:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
 }
 
 /* Contact */
@@ -286,7 +300,7 @@ section p {
 #contact a {
   display: inline-block;
   padding: 0.75rem 2rem;
-  background: #008080;
+  background: #306161;
   color: #fbfbfb;
   border-radius: 9999px;
   font-weight: 600;
@@ -295,7 +309,7 @@ section p {
 }
 
 #contact a:hover {
-  background: #009393;
+  background-color: #00a6a6;
 }
 
 /* Footer */
@@ -304,5 +318,5 @@ footer {
   padding: 2rem;
   font-size: 0.9rem;
   color: #fbfbfb;
-  border-top: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid rgba(0,0,0,0.25);
 }
