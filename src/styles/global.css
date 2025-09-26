@@ -184,7 +184,7 @@ section p {
 }
 
 .timeline-content:hover {
-  background-color: #306161;
+  background-color: rgba(48, 97, 97, 0.3);
 }
 
 .timeline-content h3 {
