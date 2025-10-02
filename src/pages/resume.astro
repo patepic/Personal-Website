@@ -1,0 +1,205 @@
+---
+import "../styles/global.css";
+import Nav from "../components/nav.astro";
+import Footer from "../components/footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Patrick Coulter | Patrick's Website</title>
+  </head>
+  <body>
+    <Nav />
+
+    <main class="resume-container">
+      <div class="resume-header">
+        <h1>Patrick Coulter</h1>
+        <p>Full-Stack Developer • Boston, MA</p>
+      </div>
+
+      <section class="resume-section">
+        <h2>Work History</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>Freelance Developer</h3>
+              <p class="job-meta">May 2022 – Present</p>
+              <p>
+                Developed and delivered custom applications for a variety of
+                clients, managing projects independently from initial
+                requirements gathering through final delivery. Adapted to new
+                tools and frameworks as needed to create efficient, practical
+                solutions that met client goals and improved workflows.
+              </p>
+              <div class="skill-chips">
+                <span class="skill-chip">React</span>
+                <span class="skill-chip">JavaScript</span>
+                <span class="skill-chip">TypeScript</span>
+                <span class="skill-chip">Java</span>
+                <span class="skill-chip">Python</span>
+                <span class="skill-chip">HTML & CSS</span>
+                <span class="skill-chip">Netlify</span>
+                <span class="skill-chip">Git & GitHub</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>DynamixE Inc.</h3>
+              <h4>Digital Applications Intern</h4>
+              <p class="job-meta">September 2022 – December 2022</p>
+              <p>
+                Built a complete project management system from the ground up,
+                collaborating closely with designers, project managers, and
+                engineers. Enhanced user experience and system performance while
+                documenting processes and establishing best practices for future
+                projects, ensuring the system was reliable and maintainable.
+                <div class="skill-chips">
+                  <span class="skill-chip">React</span>
+                  <span class="skill-chip">JavaScript</span>
+                  <span class="skill-chip">HTML & CSS</span>
+                  <span class="skill-chip">Node.js</span>
+                  <span class="skill-chip">MongoDB</span>
+                  <span class="skill-chip">Express.js</span>
+                  <span class="skill-chip">Material UI</span>
+                  <span class="skill-chip">Git & GitHub</span>
+                </div>
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h3>DynamixE Inc.</h3>
+                <h4>Software Engineer Intern</h4>
+                <p class="job-meta">January 2022 – April 2022</p>
+                <p>
+                  Focused on debugging, optimizing, and improving existing
+                  systems while ensuring cross-browser compatibility and
+                  accessibility compliance. Worked closely with team members to
+                  maintain production-ready applications and enhance overall
+                  software reliability.
+                </p>
+
+                <div class="skill-chips">
+                  <span class="skill-chip">React</span>
+                  <span class="skill-chip">JavaScript</span>
+                  <span class="skill-chip">HTML & CSS</span>
+                  <span class="skill-chip">MongoDB</span>
+                  <span class="skill-chip">Material UI</span>
+                  <span class="skill-chip">Git & GitHub</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h3>Software Engineer</h3>
+                <p class="job-meta">March 2020 – December 2021</p>
+                <p>
+                  Designed and delivered custom software solutions, overseeing
+                  the full development lifecycle and integrating new frameworks
+                  and tools to improve maintainability and scalability. Ensured
+                  projects were organized, production-ready, and delivered
+                  reliable results that met client and business requirements.
+                </p>
+                <div class="skill-chips">
+                  <span class="skill-chip">React</span>
+                  <span class="skill-chip">JavaScript</span>
+                  <span class="skill-chip">Java</span>
+                  <span class="skill-chip">Python</span>
+                  <span class="skill-chip">C++</span>
+                  <span class="skill-chip">HTML & CSS</span>
+                  <span class="skill-chip">Git & GitHub</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h2>Skills & Tech Stack</h2>
+        <div class="skills-grid">
+          <div>
+            <h3>Frontend</h3>
+            <div class="skill-chips">
+              <span class="skill-chip">React.js</span>
+              <span class="skill-chip">JavaScript</span>
+              <span class="skill-chip">TypeScript</span>
+              <span class="skill-chip">Astro.js</span>
+              <span class="skill-chip">HTML5</span>
+              <span class="skill-chip">CSS3</span>
+            </div>
+          </div>
+          <div>
+            <h3>Backend</h3>
+            <div class="skill-chips">
+              <span class="skill-chip">Node.js</span>
+              <span class="skill-chip">Express.js</span>
+              <span class="skill-chip">Java</span>
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">C++</span>
+              <span class="skill-chip">C#</span>
+            </div>
+          </div>
+          <div>
+            <h3>Databases</h3>
+            <div class="skill-chips">
+              <span class="skill-chip">MongoDB</span>
+              <span class="skill-chip">MySQL</span>
+            </div>
+          </div>
+          <div>
+            <h3>Cloud</h3>
+            <div class="skill-chips">
+              <span class="skill-chip">Firebase</span>
+              <span class="skill-chip">Netlify</span>
+            </div>
+          </div>
+          <div>
+            <h3>Tools</h3>
+            <div class="skill-chips">
+              <span class="skill-chip">Git/GitHub</span>
+              <span class="skill-chip">VSCode</span>
+              <span class="skill-chip">IntelliJ</span>
+              <span class="skill-chip">Visual Studio</span>
+            </div>
+          </div>
+          <div>
+            <h3>Platforms</h3>
+            <div class="skill-chips">
+              <span class="skill-chip">Windows</span>
+              <span class="skill-chip">Linux (Ubuntu)</span>
+              <span class="skill-chip">Android</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h2>Resume PDF</h2>
+        <p>A shortened PDF version of my resume can be downloaded below ↓</p>
+        <div class="resume-button">
+          <a href="your-resume.pdf" target="_blank" class="btn">
+            <i class="fa-solid fa-download"></i> Download Resume
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+
+  <Footer />
+</html>
