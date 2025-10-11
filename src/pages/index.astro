@@ -1,30 +1,36 @@
----
-import "../styles/global.css";
-import Nav from "../components/nav.astro";
-import Footer from "../components/footer.astro";
----
+  ---
+  import "../styles/global.css";
+  import Nav from "../components/nav.astro";
+  import Footer from "../components/footer.astro";
+  ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>My Portfolio</title>
-  </head>
-  <body class="bg-white text-gray-900 font-sans scroll-smooth">
-    <Nav />
-    <main>
-      <section id="home">
-        <h2>Patrick Coulter</h2>
-        <h3>Full Stack Engineer</h3>
-        <p>I build engaging & accessible digital experiences for the web.</p>
-      </section>
-    </main>
-    <Footer />
-  </body>
-</html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+      <title>My Portfolio</title>
+    </head>
+    <body class="bg-white text-gray-900 font-sans scroll-smooth">
+      <Nav />
+      <main>
+        <section id="home">
+          <div class="text-content">
+            <h2>Patrick Coulter</h2>
+            <h3>Full Stack Engineer</h3>
+            <p>I build engaging & accessible digital experiences for the web.</p>
+          </div>
+          <div class="image">
+            <img src="/src/assets/BMO.png" alt="BMO" />
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </body>
+  </html>
