@@ -1,8 +1,29 @@
+---
+const { pathname } = Astro.url;
+const isHome = pathname === "/";
+
+const projects = [
+  { title: "Project 1", desc: "Short description of Project 1." },
+  { title: "Project 2", desc: "Short description of Project 2." },
+  { title: "Project 3", desc: "Short description of Project 3." },
+  { title: "Project 4", desc: "Short description of Project 4.", best: true },
+  { title: "Project 5", desc: "Short description of Project 5." },
+  { title: "Project 6", desc: "Short description of Project 6.", best: true },
+];
+
+const shownProjects = isHome
+  ? projects.filter((p) => p.best)
+  : projects;
+---
+
 <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-        <div><h3>Project 1</h3><p>Short description of Project 1.</p></div>
-        <div><h3>Project 2</h3><p>Short description of Project 2.</p></div>
-        <div><h3>Project 3</h3><p>Short description of Project 3.</p></div>
-    </div>
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    {shownProjects.map((project) => (
+      <div class={project.best ? "best" : ""}>
+        <h3>{project.title}</h3>
+        <p>{project.desc}</p>
+      </div>
+    ))}
+  </div>
 </section>
