@@ -3,12 +3,12 @@ const { pathname } = Astro.url;
 const isHome = pathname === "/";
 
 const projects = [
-  { title: "Project 1", desc: "Short description of Project 1." },
-  { title: "Project 2", desc: "Short description of Project 2." },
-  { title: "Project 3", desc: "Short description of Project 3." },
-  { title: "Project 4", desc: "Short description of Project 4.", best: true },
-  { title: "Project 5", desc: "Short description of Project 5." },
-  { title: "Project 6", desc: "Short description of Project 6.", best: true },
+  { title: "Project 1", desc: "Short description of Project 1.", link: "", best: false },
+  { title: "Project 2", desc: "Short description of Project 2.", link: "", best: false },
+  { title: "Project 3", desc: "Short description of Project 3.", link: "", best: false },
+  { title: "Project 4", desc: "Short description of Project 4.", link: "", best: true },
+  { title: "Project 5", desc: "Short description of Project 5.", link: "", best: false },
+  { title: "Project 6", desc: "Short description of Project 6.", link: "", best: true },
 ];
 
 const shownProjects = isHome
@@ -20,10 +20,10 @@ const shownProjects = isHome
   <h2>Projects</h2>
   <div class="projects-grid">
     {shownProjects.map((project) => (
-      <div class={project.best ? "best" : ""}>
+      <a href={project.link} class={`project-card ${project.best ? "best" : ""}`}>
         <h3>{project.title}</h3>
         <p>{project.desc}</p>
-      </div>
+      </a>
     ))}
   </div>
 </section>
