@@ -287,15 +287,39 @@ nav ul li a.contact-btn:hover {
 #projects {
   max-width: 950px;
   margin: 0 auto;
-  padding-bottom: 7rem;
-  text-align: center;
+  padding: 10rem 0;
+}
+
+.projects-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
 }
 
 #projects h2 {
   font-size: 2.8rem;
   font-weight: 700;
   color: var(--magenta);
-  margin-bottom: 2.5rem;
+  margin: 0;
+  line-height: 1;
+}
+
+.all-projects-link {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.2s ease;
+  line-height: 1;
+  display: flex;
+  align-items: center; 
+}
+
+.all-projects-link:hover {
+  color: var(--magenta);
+  text-decoration: underline;
 }
 
 .projects-grid {
@@ -304,7 +328,8 @@ nav ul li a.contact-btn:hover {
   gap: 2rem;
 }
 
-.projects-grid > div {
+.projects-grid > a.project-card {
+  display: block;
   background: rgba(26, 19, 34, 0.75);
   border: 1px solid rgba(255, 233, 122, 0.25);
   border-radius: 1rem;
@@ -312,9 +337,10 @@ nav ul li a.contact-btn:hover {
   text-align: left;
   transition: all 0.3s ease;
   box-shadow: 0 0 10px rgba(0, 200, 168, 0.1);
+  text-decoration: none;
 }
 
-.projects-grid > div:hover {
+.projects-grid > a.project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 18px rgba(251, 91, 193, 0.25);
   border-color: var(--magenta);
@@ -332,7 +358,6 @@ nav ul li a.contact-btn:hover {
   font-size: 1rem;
   line-height: 1.6;
 }
-
 
 /*  Footer  */
 footer {

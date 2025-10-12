@@ -17,7 +17,13 @@ const shownProjects = isHome
 ---
 
 <section id="projects">
-  <h2>Projects</h2>
+  <div class="projects-header">
+    <h2>Projects</h2>
+    {isHome && (
+      <a href="/projects" class="all-projects-link">All Projects →</a>
+    )}
+  </div>
+
   <div class="projects-grid">
     {shownProjects.map((project) => (
       <a href={project.link} class={`project-card ${project.best ? "best" : ""}`}>
