@@ -1,3 +1,23 @@
-<footer>
-  <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+---
+const showResume = !["/about", "/resume"].includes(Astro.url.pathname);
+---
+
+<footer class="site-footer">
+  <p>&copy; {new Date().getFullYear()} | Made with ❤️ by Patrick Coulter</p>
+
+  <div class="social-buttons">
+    <a href="https://github.com/Patepic" target="_blank" rel="noopener noreferrer" class="social-btn github">
+      <i class="fab fa-github fa"></i><span>GitHub</span>
+    </a>
+
+    <a href="https://www.linkedin.com/in/patrick-coulter/" target="_blank" rel="noopener noreferrer" class="social-btn linkedin">
+      <i class="fab fa-linkedin fa"></i><span>LinkedIn</span>
+    </a>
+
+    {showResume && (
+      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="social-btn resume">
+        <i class="fas fa-file-alt fa"></i><span>Resume</span>
+      </a>
+    )}
+  </div>
 </footer>

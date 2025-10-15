@@ -382,22 +382,55 @@ footer {
   left: 0;
   width: 100%;
   text-align: center;
-  margin-top: auto;
-  padding: 0.25rem;
+  padding: 3rem 0;
   background: var(--surface-bright);
   border-top: 1px solid rgba(255, 233, 122, 0.25);
   color: var(--text-main);
   font-size: 0.95rem;
 }
 
-footer a {
-  color: var(--magenta);
-  font-weight: 600;
-  text-decoration: none;
-  margin: 0 0.5rem;
-  transition: 0.3s ease;
+.site-footer p {
+  font-size: 0.95rem;
 }
 
-footer a:hover {
-  color: var(--teal);
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--dark-bg);
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+  transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+  line-height: 1;
+}
+
+.social-btn .fa {
+  font-size: 1.05rem;
+  display: inline-block;
+  width: 1.25rem;
+  text-align: center;
+}
+
+.social-btn { 
+  background: var(--magenta); 
+}
+.social-btn:hover { 
+  background: var(--toxic-green); 
+  transform: translateY(-3px); 
+  box-shadow: 0 10px 24px rgba(15,23,42,0.12); 
+}
+
+.social-btn:focus {
+  outline: 3px solid rgba(59,130,246,0.18);
+  outline-offset: 3px;
 }
