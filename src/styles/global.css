@@ -75,7 +75,7 @@ nav ul li a {
 }
 
 nav ul li a:not(.contact-btn):hover {
-  color: var(--teal);
+  color: var(--toxic-green); 
 }
 
 nav ul li a.contact-btn {
@@ -93,7 +93,7 @@ nav ul li a.contact-btn {
 }
 
 nav ul li a.contact-btn:hover {
-  background: var(--teal);
+  background: var(--toxic-green); 
   color: var(--dark-bg);
 }
 
@@ -295,7 +295,7 @@ nav ul li a.contact-btn:hover {
 }
 
 .resume-button a:hover {
-  background: var(--teal);
+  background: var(--toxic-green); 
   color: var(--dark-bg);
 }
 
