@@ -1,38 +1,60 @@
-  ---
-  import "../styles/global.css";
-  import Nav from "../components/nav.astro";
-  import Projects from "../components/projectsList.astro";
-  import Footer from "../components/footer.astro";
-  ---
+---
+import "../styles/global.css";
+import Nav from "../components/nav.astro";
+import Projects from "../components/projectsList.astro";
+import Footer from "../components/footer.astro";
+---
 
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      />
-      <title>Patrick's Website</title>
-    </head>
-    <body class="bg-white text-gray-900 font-sans scroll-smooth">
-      <Nav />
-      <main>
-        <section id="home">
-          <div class="text-content">
-            <h2>Patrick Coulter</h2>
-            <h3>Full Stack Engineer</h3>
-            <p>I build engaging & accessible digital experiences for the web.</p>
-          </div>
-          <div class="image">
-            <img src="/src/assets/BMO.png" alt="BMO" />
-          </div>
-        </section>
-        <Projects />
-      </main>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Patrick's Website</title>
+  </head>
+  <body class="bg-white text-gray-900 font-sans scroll-smooth">
+    <Nav />
+    <main>
+      <section id="home">
+        <div class="text-content">
+          <h2>Patrick Coulter</h2>
+          <h3>Full Stack Engineer</h3>
+          <p>I build engaging & accessible digital experiences for the web.</p>
 
-      <Footer />
-    </body>
-  </html>
+          <div class="social-links">
+            <a
+              href="https://linkedin.com/in/patrick-coulter"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a
+              href="https://github.com/patepic"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="/resume.pdf" target="_blank" aria-label="Resume">
+              <i class="fas fa-file-alt fa-2x"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="image">
+          <img src="/src/assets/BMO.png" alt="BMO" />
+        </div>
+      </section>
+
+      <Projects />
+    </main>
+
+    <Footer />
+  </body>
+</html>
