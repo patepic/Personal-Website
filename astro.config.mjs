@@ -1,11 +1,11 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}",
-    "./public/**/*.html"
+import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
+import tailwind from '@astrojs/tailwind';
+
+// Astro configuration
+export default defineConfig({
+  integrations: [
+    react(),
+    tailwind(),
   ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
+});

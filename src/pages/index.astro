@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Nav from "../components/nav.astro";
+import RotatingText from "../components/rotatingText";
 import ProjectsList from "../components/projectsList.astro";
 import Footer from "../components/footer.astro";
 ---
@@ -17,44 +18,64 @@ import Footer from "../components/footer.astro";
     />
     <title>Patrick's Website</title>
   </head>
-  <body class="bg-white text-gray-900 font-sans scroll-smooth">
+  <body class="scroll-smooth">
     <Nav />
     <main>
       <section id="home">
-        <div class="text-content">
-          <h2>Patrick Coulter</h2>
-          <h3>Full Stack Engineer</h3>
-          <p>I build engaging & accessible digital experiences for the web.</p>
+        <div class="home-container">
+          <div class="homepage">
+            <div class="home-text">
+              <h1>Hi, my name is Patrick</h1>
+              <RotatingText client:load />
+              <p>
+                I am a full-stack developer based in Boston, Massachusetts,
+                specializing in building web and mobile applications that
+                seamlessly blend design and functionality, delivering
+                pixel-perfect, visually engaging digital experiences. Whether
+                elegant and sleek or fun and imaginative, I take pride in
+                crafting experiences that put <b>personality</b>, <b>charm</b>,
+                and <b>identity</b> front and center.
+              </p>
 
-          <div class="social-links">
-            <a
-              href="https://linkedin.com/in/patrick-coulter"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-              <i class="fab fa-linkedin fa-2x"></i>
-            </a>
-            <a
-              href="https://github.com/patepic"
-              target="_blank"
-              aria-label="GitHub"
-            >
-              <i class="fab fa-github fa-2x"></i>
-            </a>
-            <a href="/resume.pdf" target="_blank" aria-label="Resume">
-              <i class="fas fa-file-alt fa-2x"></i>
-            </a>
+              <div class="social-buttons-home mt-4 flex gap-4">
+                <a
+                  href="https://github.com/Patepic"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-btn github"
+                >
+                  <i class="fab fa-github fa"></i><span>GitHub</span>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/patrick-coulter/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-btn linkedin"
+                >
+                  <i class="fab fa-linkedin fa"></i><span>LinkedIn</span>
+                </a>
+
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-btn resume"
+                >
+                  <i class="fas fa-file-alt fa"></i><span>Resume</span>
+                </a>
+              </div>
+            </div>
+            <div class="home-image">
+              <img src="/src/assets/profile1.png" alt="profile" />
+            </div>
           </div>
         </div>
+        
+        <ProjectsList />
 
-        <div class="image">
-          <img src="/src/assets/BMO.png" alt="BMO" />
-        </div>
+        <Footer />
       </section>
-
-      <ProjectsList />
     </main>
-
-    <Footer />
   </body>
 </html>
