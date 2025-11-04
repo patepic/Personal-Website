@@ -9,6 +9,12 @@ const projects = [
   { title: "Project 4", desc: "Short description of Project 4.", link: "", best: true },
   { title: "Project 5", desc: "Short description of Project 5.", link: "", best: false },
   { title: "Project 6", desc: "Short description of Project 6.", link: "", best: true },
+  { title: "Project 1", desc: "Short description of Project 1.", link: "", best: false },
+  { title: "Project 2", desc: "Short description of Project 2.", link: "", best: false },
+  { title: "Project 3", desc: "Short description of Project 3.", link: "", best: false },
+  { title: "Project 4", desc: "Short description of Project 4.", link: "", best: true },
+  { title: "Project 5", desc: "Short description of Project 5.", link: "", best: false },
+  { title: "Project 6", desc: "Short description of Project 6.", link: "", best: true }
 ];
 
 const shownProjects = isHome
@@ -23,6 +29,12 @@ const shownProjects = isHome
       <a href="/projects" class="all-projects-link">All Projects →</a>
     )}
   </div>
+
+  {!isHome && (
+    <p class="projects-subtitle">
+      Open-source projects I’ve made over the years
+    </p>
+  )}
 
   <div class="projects-grid">
     {shownProjects.map((project) => (

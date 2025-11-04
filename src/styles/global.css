@@ -18,33 +18,41 @@ body {
   padding: 0;
   line-height: 1.7;
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* side nav layout */
   min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* Nav */
+/* Main content wrapper */
+main {
+  margin-left: 220px; /* width of sidebar */
+  width: calc(100% - 220px);
+}
+
+/* Nav: vertical sidebar */
 nav {
   position: fixed;
   top: 0;
-  width: 100%;
-  height: 4rem;
-  background: rgba(51, 43, 43, 0.6);
+  left: 220px;
+  width: 220px; /* sidebar width */
+  height: 100vh;
+  background: rgba(51, 43, 43, 0.95);
   backdrop-filter: blur(14px);
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  padding: 0 2rem;
+  padding: 2rem 1rem;
   z-index: 100;
-  border-bottom: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
   box-sizing: border-box;
 }
 
 nav ul {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 1.5rem;
-  margin: 0;
+  margin: 2rem 0 0 0;
   padding: 0;
   list-style: none;
 }
@@ -70,7 +78,7 @@ nav ul li a.contact-btn {
   color: var(--bg-color);
   font-weight: 600;
   font-size: 18px;
-  padding: 0 18px;
+  padding: 0.5rem 1rem;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -80,17 +88,17 @@ nav ul li a.contact-btn {
 
 nav ul li a.contact-btn:hover {
   background: var(--dark-red);
-  transform: scale(1.05);
 }
 
 /* Home Section */
 .home-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 80vh;
   width: 100%;
-  padding-top: 72px;
+  padding-top: 2rem;
+  padding-left: 2rem;
 }
 
 .homepage {
@@ -143,7 +151,6 @@ nav ul li a.contact-btn:hover {
 
 .social-buttons-home a:hover {
   background: var(--dark-red);
-  transform: scale(1.05);
 }
 
 /* About Section */
@@ -155,7 +162,7 @@ nav ul li a.contact-btn:hover {
   justify-content: center;
   gap: 5rem;
   padding: 7rem 2rem;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   background: var(--bg-color);
 }
 
@@ -236,6 +243,13 @@ nav ul li a.contact-btn:hover {
   margin: 0.5rem 0;
 }
 
+.resume-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+  color: var(--text-secondary);
+}
+
 .timeline-item {
   background: rgba(255, 59, 31, 0.1);
   padding: 1rem;
@@ -284,8 +298,6 @@ nav ul li a.contact-btn:hover {
 
 .skill-chip:hover {
   background: rgba(255, 59, 31, 0.25);
-  color: var(--scarlet);
-  transform: scale(1.05);
 }
 
 /* Resume Button */
@@ -303,14 +315,13 @@ nav ul li a.contact-btn:hover {
 
 .resume-button a:hover {
   background: var(--dark-red);
-  transform: scale(1.05);
 }
 
 /* Projects Section */
 #projects {
   max-width: 950px;
   margin: 0 auto;
-  padding: 10rem 0;
+  padding: 10rem 2rem;
 }
 
 .projects-header {
@@ -327,6 +338,13 @@ nav ul li a.contact-btn:hover {
   color: var(--scarlet);
   margin: 0;
   line-height: 1;
+}
+
+.projects-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-top: -0.5rem;
+  margin-bottom: 2rem;
 }
 
 .all-projects-link {
@@ -382,17 +400,20 @@ nav ul li a.contact-btn:hover {
 
 /* Footer */
 footer {
-  text-align: center;
   padding: 3rem 0;
   border-top: 1px solid var(--border-color);
   color: var(--text-main);
   font-size: 0.95rem;
 }
 
+footer p {
+  margin-left: 300px;
+}
+
 .social-buttons {
   display: flex;
-  justify-content: center;
   margin-top: 0.5rem;
+  margin-left: 300px;
   gap: 0.75rem;
   flex-wrap: wrap;
 }
@@ -421,10 +442,39 @@ footer {
 
 .social-btn:hover {
   background: var(--dark-red);
-  transform: scale(1.05);
 }
 
 .social-btn:focus {
   outline: 3px solid rgba(255, 59, 31, 0.3);
   outline-offset: 3px;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    width: 100%;
+    height: 4rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  body {
+    flex-direction: column;
+  }
+
+  main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .home-container,
+  .about-section,
+  .resume-container,
+  #projects {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
