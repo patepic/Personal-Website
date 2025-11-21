@@ -3,45 +3,86 @@ const { pathname } = Astro.url;
 const isHome = pathname === "/";
 
 const projects = [
-  { title: "Project 1", desc: "Short description of Project 1.", link: "", best: false },
-  { title: "Project 2", desc: "Short description of Project 2.", link: "", best: false },
-  { title: "Project 3", desc: "Short description of Project 3.", link: "", best: false },
-  { title: "Project 4", desc: "Short description of Project 4.", link: "", best: true },
-  { title: "Project 5", desc: "Short description of Project 5.", link: "", best: false },
-  { title: "Project 6", desc: "Short description of Project 6.", link: "", best: true },
-  { title: "Project 1", desc: "Short description of Project 1.", link: "", best: false },
-  { title: "Project 2", desc: "Short description of Project 2.", link: "", best: false },
-  { title: "Project 3", desc: "Short description of Project 3.", link: "", best: false },
-  { title: "Project 4", desc: "Short description of Project 4.", link: "", best: true },
-  { title: "Project 5", desc: "Short description of Project 5.", link: "", best: false },
-  { title: "Project 6", desc: "Short description of Project 6.", link: "", best: true }
+  {
+    title: "Project 1",
+    year: 2023,
+    desc: "Short description of Project 1.",
+    link: "",
+    best: false,
+  },
+  {
+    title: "Project 2",
+    year: 2022,
+    desc: "Short description of Project 2.",
+    link: "",
+    best: false,
+  },
+  {
+    title: "Project 3",
+    year: 2024,
+    desc: "Short description of Project 3.",
+    link: "",
+    best: false,
+  },
+  {
+    title: "Project 4",
+    year: 2024,
+    desc: "Short description of Project 4.",
+    link: "",
+    best: true,
+  },
+  {
+    title: "Project 5",
+    year: 2021,
+    desc: "Short description of Project 5.",
+    link: "",
+    best: false,
+  },
+  {
+    title: "Project 6",
+    year: 2023,
+    desc: "Short description of Project 6.",
+    link: "",
+    best: true,
+  },
 ];
 
-const shownProjects = isHome
-  ? projects.filter((p) => p.best)
-  : projects;
+const shownProjects = isHome ? projects.filter((p) => p.best) : projects;
 ---
 
 <section id="projects">
   <div class="projects-header">
     <h2>Projects</h2>
-    {isHome && (
-      <a href="/projects" class="all-projects-link">All Projects →</a>
-    )}
+    {
+      isHome && (
+        <a href="/projects" class="all-projects-link">
+          All Projects →
+        </a>
+      )
+    }
   </div>
 
-  {!isHome && (
-    <p class="projects-subtitle">
-      Open-source projects I’ve made over the years
-    </p>
-  )}
+  {
+    !isHome && (
+      <p class="projects-subtitle">
+        Open-source projects I’ve made over the years
+      </p>
+    )
+  }
 
   <div class="projects-grid">
-    {shownProjects.map((project) => (
-      <a href={project.link} class={`project-card ${project.best ? "best" : ""}`}>
-        <h3>{project.title}</h3>
-        <p>{project.desc}</p>
-      </a>
-    ))}
+    {
+      shownProjects.map((project) => (
+        <div class={`project-card ${project.best ? "best" : ""}`}>
+          <span class="project-year">{project.year}</span>
+          <h3>{project.title}</h3>
+          <p>{project.desc}</p>
+
+          <a href={project.link} class="project-button">
+            View Project
+          </a>
+        </div>
+      ))
+    }
   </div>
 </section>
