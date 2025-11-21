@@ -43,7 +43,7 @@ main {
 }
 
 b {
-  color: var(--text-main)
+  color: var(--text-main);
 }
 
 /* Nav */
@@ -83,10 +83,10 @@ nav ul li a {
   margin: 0 -0.5rem;
   padding: 0.25rem 0.5rem;
   gap: 0.4rem;
-  transition: all 0.3s ease-in-out;
 }
 
-nav ul li a:not(.contact-btn):hover {
+nav ul li a:not(.contact-btn):hover,
+nav ul li a:not(.contact-btn).active {
   background: var(--accent-dark);
   border-radius: 10px;
 }
