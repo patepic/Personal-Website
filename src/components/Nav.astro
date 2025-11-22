@@ -1,10 +1,31 @@
 <header>
   <nav>
+    <div class="nav-title">
+      <a href="/"><i class="fa-solid fa-floppy-disk"></i>Patrick</a>
+    </div>
+    <div class="info">
+      <h4>About Me</h4>
+      <p>
+        I'm Patrick, software engineer and open-source creator. Welcome to my
+        digital space.
+      </p>
+    </div>
     <ul>
-      <li><a href="/" class="nav-link"><i class="fa-regular fa-house"></i> Home</a></li>
-      <li><a href="/about" class="nav-link"><i class="fa-regular fa-user"></i> About</a></li>
-      <li><a href="/resume" class="nav-link"><i class="fa-regular fa-file-lines"></i> Resume</a></li>
-      <li><a href="/projects" class="nav-link"><i class="fa-solid fa-briefcase"></i> Projects</a></li>
+      <li>
+        <a href="/about" class="nav-link"
+          ><i class="fa-regular fa-user"></i> About</a
+        >
+      </li>
+      <li>
+        <a href="/resume" class="nav-link"
+          ><i class="fa-regular fa-file-lines"></i> Resume</a
+        >
+      </li>
+      <li>
+        <a href="/projects" class="nav-link"
+          ><i class="fa-solid fa-briefcase"></i> Projects</a
+        >
+      </li>
       <li>
         <a href="mailto:patrickcoulter01@gmail.com" class="contact-btn">
           <i class="fa-regular fa-envelope"></i> Contact
@@ -17,16 +38,16 @@
 <script>
   const navLinks = document.querySelectorAll(".nav-link");
 
-  navLinks.forEach(link => {
+  navLinks.forEach((link) => {
     link.addEventListener("mousedown", () => {
-      navLinks.forEach(l => l.classList.remove("active"));
+      navLinks.forEach((l) => l.classList.remove("active"));
       link.classList.add("active");
     });
   });
 
   const currentPath = window.location.pathname;
 
-  navLinks.forEach(link => {
+  navLinks.forEach((link) => {
     const linkPath = link.getAttribute("href");
 
     if (linkPath === "/" && currentPath === "/") {
