@@ -1,8 +1,24 @@
 <header>
   <nav>
-    <div class="nav-title">
-      <a href="/"><i class="fa-solid fa-floppy-disk"></i>Patrick</a>
+    <div class="nav-header">
+      <div class="nav-title">
+        <a href="/">
+          <i class="fa-solid fa-floppy-disk"></i>
+          <span>Patrick</span>
+        </a>
+      </div>
+
+      <div class="nav-buttons">
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button id="mobile-menu-toggle" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
+
     <div class="info">
       <h4>About Me</h4>
       <p>
@@ -10,6 +26,7 @@
         digital space.
       </p>
     </div>
+
     <ul>
       <li>
         <a href="/about" class="nav-link"
@@ -36,7 +53,7 @@
 </header>
 
 <script>
-  const navLinks = document.querySelectorAll(".nav-link");
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>(".nav-link");
 
   navLinks.forEach((link) => {
     link.addEventListener("mousedown", () => {
@@ -49,11 +66,77 @@
 
   navLinks.forEach((link) => {
     const linkPath = link.getAttribute("href");
+    if (!linkPath) return; // skip if href is null
 
     if (linkPath === "/" && currentPath === "/") {
       link.classList.add("active");
     } else if (linkPath !== "/" && currentPath.startsWith(linkPath)) {
       link.classList.add("active");
     }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById("theme-toggle");
+
+    if (!themeToggle) return;
+
+    const themeIcon = themeToggle.querySelector("i") as HTMLElement | null;
+
+    function updateIcon(theme: "light" | "dark") {
+      if (!themeIcon) return;
+      themeIcon.className =
+        theme === "light" ? "fa-solid fa-moon" : "fa-solid fa-sun";
+    }
+
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+    const initialTheme: "light" | "dark" = savedTheme ?? "dark";
+
+    document.documentElement.dataset.theme = initialTheme;
+    updateIcon(initialTheme);
+
+    window.addEventListener("load", () => {
+      document.documentElement.classList.remove("preload");
+    });
+
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = document.documentElement.dataset.theme as
+        | "light"
+        | "dark";
+
+      const newTheme: "light" | "dark" =
+        currentTheme === "light" ? "dark" : "light";
+
+      document.documentElement.dataset.theme = newTheme;
+      localStorage.setItem("theme", newTheme);
+      updateIcon(newTheme);
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.getElementById("mobile-menu-toggle");
+    const navMenu = document.querySelector("nav ul");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const icon = toggleButton?.querySelector("i");
+
+    function toggleMenu() {
+      navMenu?.classList.toggle("show");
+
+      if (icon) {
+        icon.className = navMenu?.classList.contains("show")
+          ? "fa-solid fa-xmark"
+          : "fa-solid fa-bars";
+      }
+    }
+
+    function closeMenu() {
+      navMenu?.classList.remove("show");
+      if (icon) icon.className = "fa-solid fa-bars";
+    }
+
+    toggleButton?.addEventListener("click", toggleMenu);
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
   });
 </script>
